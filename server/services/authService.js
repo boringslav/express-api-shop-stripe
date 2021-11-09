@@ -1,9 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const CryptoJS = require("crypto-js");
 const User = require('../models/User');
 
-const PASS_SECRET = process.env.PASS_SECRET;
 
 const emailValidator = (email) => {
     const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
@@ -17,33 +15,38 @@ const passwordValidator = (password, repeatPassword) => {
     }
     return true;
 }
-const validateSignUp = (username, email, password, repeatPassword) => {
-    //TODO: Check if username and email are in the db
+
+const validateSignUp = async (username, email, password, repeatPassword) => {
+    let infoObj = {
+        isValid: false,
+        messages: [],
+    }
+
+    const foundUsername = await User.findOne({ username });
+    const foundEmail = await User.findOne({ email });
     const isValidEmail = emailValidator(email);
     const isValidPassword = passwordValidator(password, repeatPassword);
 
-    if (isValidEmail && isValidPassword) {
-        return true;
+    if (isValidEmail && isValidPassword && !foundUsername && !foundEmail) {
+        infoObj.isValid = true;
     }
-    return false;
+
+    if (foundUsername) {
+        infoObj.message = "A user with this username already exists";
+    }
+    if (foundEmail) {
+        infoObj.message = "A user with this email already exists";
+    }
+    if (!isValidEmail) {
+        infoObj.message = "Invalid email";
+    }
+    if (!isValidPassword) {
+        infoObj.message = "Passwords do not match";
+    }
+    return infoObj;
 }
-
-
-const saveUser = async (username, email, password) => {
-
-    const userModel = new User({
-        username,
-        email,
-        password: CryptoJS.AES.encrypt(password, PASS_SECRET).toString()
-    });
-    console.log('user model', userModel);
-    user = userModel.save();
-    return user;
-}
-
 module.exports = {
     emailValidator,
     passwordValidator,
     validateSignUp,
-    saveUser,
 }

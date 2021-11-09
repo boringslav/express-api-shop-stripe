@@ -45,6 +45,7 @@ const validateSignUp = async (username, email, password, repeatPassword) => {
     }
     return infoObj;
 }
+
 module.exports = {
     emailValidator,
     passwordValidator,

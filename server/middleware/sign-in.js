@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
 
         res.status(200).json({
             accessToken,
-            user: Object.fromEntries(adaptedData),
+            ...Object.fromEntries(adaptedData),
         });
 
     } catch (err) {

@@ -5,7 +5,6 @@ const { verifyTokenAndAuthorization } = require('../middleware/verifyToken');
 
 router.put('/:id', verifyTokenAndAuthorization, async (req, res) => {
     const id = req.params.id;
-    console.log('Req Params: ', req.params)
 
     req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString();
 
@@ -14,7 +13,9 @@ router.put('/:id', verifyTokenAndAuthorization, async (req, res) => {
             $set: req.body
         }, { new: true });
 
-        res.status(200).json(updatedUser);
+        const updatedData = Object.entries(updatedUser._doc).filter(([key, value]) => key !== "password");
+
+        res.status(200).json(Object.fromEntries(updatedData));
 
     } catch (err) {
         res.status(500).json({ message: err })

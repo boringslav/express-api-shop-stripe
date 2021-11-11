@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
 
         try {
             await newUser.save();
-            res.status(201).send({ message: "User created successfully" });
+            res.status(201).send({ message: `User ${username} created successfully` });
         } catch (err) {
             res.status(500).send({ message: err.message });
         }

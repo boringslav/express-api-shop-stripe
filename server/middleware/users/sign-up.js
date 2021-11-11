@@ -1,6 +1,6 @@
 const CryptoJS = require("crypto-js");
-const User = require('../models/User');
-const authService = require('../services/authService');
+const User = require('../../models/User');
+const authService = require('../../services/authService');
 
 module.exports = async (req, res) => {
     const { username, email, password, repeatPassword } = req.body;

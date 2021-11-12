@@ -15,12 +15,12 @@ module.exports = async (req, res) => {
 
         try {
             await newUser.save();
-            res.status(201).send({ message: `User ${username} created successfully` });
+            res.status(201).json({ message: `User ${username} created successfully` });
         } catch (err) {
-            res.status(500).send({ message: err.message });
+            res.status(500).json({ message: err.message });
         }
     } else {
-        res.status(500).send({
+        res.status(500).json({
             message: userData.message
         })
     }

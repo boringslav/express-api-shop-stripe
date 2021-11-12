@@ -6,7 +6,6 @@ const getUsers = require('../middleware/users/getUsers');
 const updateUser = require('../middleware/users/updateUser');
 const deleteUser = require('../middleware/users/deleteUser');
 const getUser = require('../middleware/users/getUser');
-const getUsersStats = require('../middleware/users/getUsersStats');
 
 router.route('/:id')
     .put(verifyTokenAndAuthorization, updateUser)

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers.token;
     const token = authHeader.split(' ').at(1);
-    const JWT_SECRET_KEY = adprocess.env.JWT_SECRET_KEY;
+    const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 
     if (authHeader) {

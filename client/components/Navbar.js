@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../styles/Navbar.module.scss'
+import styles from '../styles/Navbar.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';

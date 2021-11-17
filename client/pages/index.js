@@ -1,9 +1,10 @@
-import Announcement from "../components/Announcement"
+import Announcement from "../components/Announcement";
+import Slider from '../components/Slider';
 
 export default function Home() {
   return (
     <>
-      <h1>Home</h1>
+      <Slider />
     </>
   )
 }

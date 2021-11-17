@@ -41,7 +41,7 @@ function Slider() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.arrowLeft}>
+            <div className={styles.arrowLeft} >
                 <ArrowBackIosNewIcon onClick={() => handleClick('left')} />
             </div>
             <div className={styles.wrapper} style={additionalStyles}>

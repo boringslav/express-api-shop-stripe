@@ -10,6 +10,7 @@ function Navbar() {
         <header className={styles.container}>
             <div className={styles.wrapper}>
                 <div className={styles.left}>
+                    <span className={styles.language}>en</span>
                     <div className={styles.searchContainer}>
                         <input className={styles.searchInput} type="text" />
                         <SearchIcon style={{ color: 'gray', fontSize: '16px' }} />

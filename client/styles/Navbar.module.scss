@@ -14,6 +14,21 @@
       flex: 1;
       display: flex;
       align-items: center;
+
+      .language {
+        border: 0.5px solid lightgray;
+        padding: 5px;
+        margin: 0 8px;
+        text-transform: uppercase;
+      }
+      .language:hover {
+        text-transform: uppercase;
+        margin-left: 8px;
+        margin-right: 8px;
+        cursor: pointer;
+        background-color: rgb(119, 136, 153, 0.1);
+      }
+
       .searchContainer {
         border: 0.5px solid lightgray;
         display: flex;
@@ -33,9 +48,10 @@
 
     .center {
       flex: 1;
-
+      margin-left: 72px;
       .logoText {
         font-family: Montserrat, sans-serif;
+        align-items: center;
         text-align: center;
         font-weight: 800;
         text-transform: uppercase;

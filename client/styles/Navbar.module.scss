@@ -47,8 +47,9 @@
     }
 
     .center {
-      flex: 1;
+      flex: 0.5;
       margin-left: 72px;
+      cursor: pointer;
       .logoText {
         font-family: Montserrat, sans-serif;
         align-items: center;

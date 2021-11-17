@@ -17,7 +17,9 @@ function Navbar() {
                     </div>
                 </div>
                 <div className={styles.center}>
-                    <h1 className={styles.logoText}>boringshop</h1>
+                    <Link href="/">
+                        <h1 className={styles.logoText}>boringshop</h1>
+                    </Link>
                 </div>
                 <ul className={styles.menu}>
                     <li className={styles.link}>

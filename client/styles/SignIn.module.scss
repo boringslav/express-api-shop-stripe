@@ -1,0 +1,60 @@
+.container {
+  width: 100vw;
+  height: 93vh;
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    flex: 0.4;
+    height: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    h1 {
+      margin: 0;
+      font-family: Montserrat, sans-serif;
+      font-size: 2em;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      padding: 32px;
+
+      label {
+        font-size: 1.5em;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        height: 6vh;
+        font-size: 1.1em;
+        width: 70vh;
+        border: 1px solid lightgrey;
+        margin-bottom: 8px;
+      }
+
+      input[type="text"],
+      input[type="password"]:focus {
+        outline: none;
+      }
+
+      button {
+        margin-top: 2rem;
+        height: 5vh;
+        width: 25%;
+        align-self: center;
+        text-transform: uppercase;
+        background: none;
+      }
+    }
+  }
+}

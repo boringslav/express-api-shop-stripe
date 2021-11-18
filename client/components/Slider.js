@@ -46,7 +46,7 @@ function Slider() {
             </div>
             <div className={styles.wrapper} style={additionalStyles}>
                 {data.map((el) => {
-                    return <SlideCard {...el} />
+                    return <SlideCard key={el.id} {...el} />
                 })}
 
             </div>

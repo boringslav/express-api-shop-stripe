@@ -1,3 +1,0 @@
-# boringshop-ecommerce-mern
-Full stack  JavaScript Ecommerce application
-Front End in progress...
